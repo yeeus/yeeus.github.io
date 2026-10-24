@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Publication } from '@/types/publication';
@@ -16,6 +18,7 @@ interface SelectedPublicationsProps {
 export default function SelectedPublications({ publications, title, enableOnePageMode = false }: SelectedPublicationsProps) {
     const messages = useMessages();
     const resolvedTitle = title || messages.home.selectedPublications;
+    const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
 
     return (
         <motion.section
@@ -83,12 +86,35 @@ export default function SelectedPublications({ publications, title, enableOnePag
                             </a>
                         )}
                         {pub.abstract && (
-                            <details className="mt-3">
-                                <summary className="inline-block cursor-pointer list-none rounded-md px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
+                            <div className="mt-3">
+                                <button
+                                    onClick={() => setExpandedAbstractId(expandedAbstractId === pub.id ? null : pub.id)}
+                                    aria-expanded={expandedAbstractId === pub.id}
+                                    aria-controls={`selected-abstract-${pub.id}`}
+                                    className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors ${expandedAbstractId === pub.id
+                                        ? 'bg-accent text-white'
+                                        : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white'}`}
+                                >
+                                    <DocumentTextIcon className="h-3 w-3 mr-1.5" />
                                     {messages.publications.abstract}
-                                </summary>
-                                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">{pub.abstract}</p>
-                            </details>
+                                </button>
+                                <AnimatePresence>
+                                    {expandedAbstractId === pub.id && (
+                                        <motion.div
+                                            key="abstract"
+                                            id={`selected-abstract-${pub.id}`}
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            className="overflow-hidden mt-4"
+                                        >
+                                            <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
+                                                <p className="text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">{pub.abstract}</p>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         )}
                         </div>
                         </div>
