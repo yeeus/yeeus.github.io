@@ -207,7 +207,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 src={`/papers/${pub.preview}`}
                                                 alt={pub.title}
                                                 fill
-                                                className="object-cover"
+                                                className="object-contain"
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             />
                                         </div>
@@ -264,6 +264,8 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         {pub.abstract && (
                                             <button
                                                 onClick={() => setExpandedAbstractId(expandedAbstractId === pub.id ? null : pub.id)}
+                                                aria-expanded={expandedAbstractId === pub.id}
+                                                aria-controls={`abstract-${pub.id}`}
                                                 className={cn(
                                                     "inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors",
                                                     expandedAbstractId === pub.id
@@ -295,6 +297,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         {expandedAbstractId === pub.id && pub.abstract ? (
                                             <motion.div
                                                 key="abstract"
+                                                id={`abstract-${pub.id}`}
                                                 initial={{ opacity: 0, height: 0 }}
                                                 animate={{ opacity: 1, height: 'auto' }}
                                                 exit={{ opacity: 0, height: 0 }}

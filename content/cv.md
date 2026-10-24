@@ -5,8 +5,8 @@
 ### Zhejiang University
 
 **Ph.D. in Biomedical Sciences, September 2025–present**  
-Center for Evolutionary & Organismal Biology  
-Advisor: Prof. Guojie Zhang
+[Center for Evolutionary & Organismal Biology](https://evolution.zju.edu.cn/)  
+Advisor: [Prof. Guojie Zhang](http://www.zhanggjlab.org/cn/index.html)
 
 **B.S. in Life Sciences, September 2021–June 2025**  
 Overall GPA: 3.89/4.00

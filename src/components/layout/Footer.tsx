@@ -27,6 +27,8 @@ export default function Footer({ lastUpdated, lastUpdatedByLocale, defaultLocale
             {messages.footer.lastUpdated}: {resolvedLastUpdated}
           </p>
           <p className="text-xs text-neutral-500 flex items-center">
+            <span>Created with Codex</span>
+            <span className="mx-2" aria-hidden="true">·</span>
             <a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer">
               {messages.footer.builtWithPrism}
             </a>

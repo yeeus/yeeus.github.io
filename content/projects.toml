@@ -1,0 +1,12 @@
+type = "card"
+title = "Projects"
+
+[[items]]
+title = "Asian Pan-Genome Project (APG)"
+link = "https://genome.zju.edu.cn/APG/"
+image = "/projects/apg.png"
+content = """
+The Asian Pan-Genome (APG) project uses long-read sequencing and haplotype-resolved genome assemblies to characterize genetic diversity across Asian populations. Phase 1 comprises 320 nearly complete, phased assemblies from 160 East Asian individuals, enabling analyses of structural variation and complex genomic regions that are difficult to resolve with a single reference genome.
+
+The project provides genome assemblies, annotations and pangenome graphs as resources for studies of human evolution and precision medicine. Visit the [project website](https://genome.zju.edu.cn/APG/) to explore its data and genome browsers, or read the [phase 1 paper](https://doi.org/10.64898/2026.07.27.740875).
+"""

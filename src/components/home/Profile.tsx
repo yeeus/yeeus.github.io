@@ -153,8 +153,10 @@ export default function Profile({ author, social, features, researchInterests }:
             </div>
 
             {/* Contact Links */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 relative px-2">
-                {socialLinks.map((link) => {
+            <div className="mb-6 space-y-2 relative px-2">
+                {[true, false].map((contactRow) => (
+                <div key={String(contactRow)} className="flex flex-nowrap justify-center gap-3 sm:gap-4">
+                {socialLinks.filter((link) => Boolean(link.isEmail || link.isLocation) === contactRow).map((link) => {
                     const IconComponent = link.icon;
                     if (link.isLocation) {
                         return (
@@ -317,6 +319,8 @@ export default function Profile({ author, social, features, researchInterests }:
                         </a>
                     );
                 })}
+                </div>
+                ))}
             </div>
 
             {/* Research Interests */}

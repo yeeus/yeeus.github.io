@@ -25,13 +25,13 @@ enable_likes = false
 enable_one_page_mode = false
 
 [i18n]
-enabled = true
-locales = ["en", "zh"]
+enabled = false
+locales = ["en"]
 default_locale = "en"
-mode = "auto"
+mode = "fixed"
 fixed_locale = "en"
-persist = true
-switcher = true
+persist = false
+switcher = false
 
 [i18n.labels]
 en = "English"
@@ -42,6 +42,12 @@ title = "About"
 type = "page"
 target = "about"
 href = "/"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
 
 [[navigation]]
 title = "Publications"

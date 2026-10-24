@@ -2,7 +2,7 @@ type = "about"
 title = "About"
 
 [profile]
-research_interests = ["Complex Genomic Variation", "Evolutionary Genomics and Medicine", "Genomics for Precision Medicine"]
+research_interests = ["Pangenomics and Complex Genomic Variation", "Evolutionary Genomics and Medicine", "Genomics for Precision Medicine"]
 
 [[sections]]
 id = "bio"

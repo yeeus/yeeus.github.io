@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Publication } from '@/types/publication';
 import { useMessages } from '@/lib/i18n/useMessages';
 import FormattedBibTeXText from '@/components/publications/FormattedBibTeXText';
@@ -41,6 +42,15 @@ export default function SelectedPublications({ publications, title, enableOnePag
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
                     >
+                        <div className="flex flex-col md:flex-row gap-4">
+                        {pub.preview && (
+                            <div className="w-full md:w-48 flex-shrink-0">
+                                <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-white">
+                                    <Image src={`/papers/${pub.preview}`} alt={pub.title} fill className="object-contain" sizes="(max-width: 768px) 100vw, 192px" />
+                                </div>
+                            </div>
+                        )}
+                        <div className="min-w-0 flex-1">
                         <h3 className="font-semibold text-primary mb-2 leading-tight">
                             <a href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                                 <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
@@ -72,6 +82,16 @@ export default function SelectedPublications({ publications, title, enableOnePag
                                 DOI: {pub.doi}
                             </a>
                         )}
+                        {pub.abstract && (
+                            <details className="mt-3">
+                                <summary className="inline-block cursor-pointer list-none rounded-md px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
+                                    {messages.publications.abstract}
+                                </summary>
+                                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">{pub.abstract}</p>
+                            </details>
+                        )}
+                        </div>
+                        </div>
                     </motion.div>
                 ))}
             </div>
