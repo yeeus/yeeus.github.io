@@ -1,0 +1,4 @@
+type = "publication"
+title = "Publications"
+description = "Research articles and preprints. My name is highlighted in the author lists."
+source = "publications.bib"

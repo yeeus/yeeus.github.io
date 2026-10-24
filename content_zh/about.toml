@@ -1,0 +1,24 @@
+type = "about"
+title = "关于我"
+
+[profile]
+research_interests = ["复杂基因组变异", "演化基因组学与医学", "面向精准医学的基因组学"]
+
+[[sections]]
+id = "bio"
+type = "markdown"
+source = "bio.md"
+title = "关于我"
+
+[[sections]]
+id = "research"
+type = "markdown"
+source = "research.md"
+title = "研究方向"
+
+[[sections]]
+id = "featured_publications"
+type = "publications"
+title = "代表性论文"
+filter = "selected"
+limit = 4

@@ -1,0 +1,56 @@
+[site]
+title = "Quanyu Chen"
+description = "Quanyu Chen — pangenomics, complex genomic variation, evolutionary genomics and precision medicine."
+favicon = "/favicon.svg"
+last_updated = "October 24, 2026"
+
+[author]
+name = "Quanyu Chen"
+title = "Ph.D. Student in Biomedical Sciences"
+institution = "Zhejiang University"
+avatar = ""
+
+[social]
+email = "chenquanyu@zju.edu.cn"
+location = "Hangzhou, China"
+location_details = ["Center for Evolutionary & Organismal Biology", "Zhejiang University", "Hangzhou, China"]
+google_scholar = "https://scholar.google.com/citations?user=IiiuVgIAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-3172-0540"
+github = "https://github.com/yeeus"
+twitter = "https://x.com/yezus_chen"
+bluesky = "https://bsky.app/profile/yeezus-chen.bsky.social"
+
+[features]
+enable_likes = false
+enable_one_page_mode = false
+
+[i18n]
+enabled = true
+locales = ["en", "zh"]
+default_locale = "en"
+mode = "auto"
+fixed_locale = "en"
+persist = true
+switcher = true
+
+[i18n.labels]
+en = "English"
+zh = "中文"
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "CV"
+type = "page"
+target = "cv"
+href = "/cv"

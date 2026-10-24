@@ -1,0 +1,4 @@
+type = "publication"
+title = "研究论文"
+description = "研究论文与预印本；作者列表中高亮显示本人姓名。"
+source = "publications.bib"

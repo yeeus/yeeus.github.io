@@ -1,0 +1,31 @@
+[site]
+title = "陈泉宇"
+description = "陈泉宇的学术主页：泛基因组、复杂基因组变异、演化基因组学与精准医学。"
+last_updated = "2026年10月24日"
+
+[author]
+name = "陈泉宇"
+title = "生物医学博士研究生"
+institution = "浙江大学"
+
+[social]
+location = "中国杭州"
+location_details = ["浙江大学", "生命演化研究中心", "中国杭州"]
+
+[[navigation]]
+title = "关于我"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "研究论文"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "个人简历"
+type = "page"
+target = "cv"
+href = "/cv"
