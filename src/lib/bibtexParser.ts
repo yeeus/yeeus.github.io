@@ -220,8 +220,13 @@ function parseAuthors(authorsStr: string, highlightNames: string[]): Array<{ nam
         highlightTextList.some((candidate) => lowerName.includes(candidate)) ||
         highlightNormalizedList.some((candidate) => normalizedName.includes(candidate));
 
+      const nameParts = name.split(/\s+/);
+      const displayName = name !== 'et al.' && nameParts.length > 1
+        ? `${nameParts.slice(0, -1).map((part) => `${part[0]}.`).join(' ')} ${nameParts[nameParts.length - 1]}`
+        : name;
+
       return {
-        name,
+        name: displayName,
         isHighlighted,
         isCorresponding,
         isCoAuthor,
