@@ -7,6 +7,7 @@ import {
     MagnifyingGlassIcon,
     FunnelIcon,
     CalendarIcon,
+    UserIcon,
     BookOpenIcon,
     ClipboardDocumentIcon,
     DocumentTextIcon
@@ -28,6 +29,7 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
+    const [selectedContribution, setSelectedContribution] = useState('all');
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
@@ -54,10 +56,13 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
+            const matchesContribution = selectedContribution === 'all' ||
+                (selectedContribution === 'first' && /^(?:first|co-first) author\b/i.test(pub.description || '')) ||
+                (selectedContribution === 'corresponding' && pub.authors.some(author => author.isHighlighted && author.isCorresponding));
 
-            return matchesSearch && matchesYear && matchesType;
+            return matchesSearch && matchesYear && matchesType && matchesContribution;
         });
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedContribution]);
 
     return (
         <motion.div
@@ -174,6 +179,33 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 )}
                                             >
                                                 {type.replace('-', ' ')}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2" role="group" aria-label="Contribution">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <UserIcon className="h-4 w-4 mr-1" /> Contribution
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        {[
+                                            { value: 'all', label: messages.common.all },
+                                            { value: 'first', label: 'First or co-first author' },
+                                            { value: 'corresponding', label: 'Corresponding author' },
+                                        ].map(option => (
+                                            <button
+                                                key={option.value}
+                                                onClick={() => setSelectedContribution(option.value)}
+                                                aria-pressed={selectedContribution === option.value}
+                                                className={cn(
+                                                    "px-3 py-1 text-xs rounded-full transition-colors",
+                                                    selectedContribution === option.value
+                                                        ? "bg-accent text-white"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                )}
+                                            >
+                                                {option.label}
                                             </button>
                                         ))}
                                     </div>
