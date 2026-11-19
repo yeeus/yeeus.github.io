@@ -8,21 +8,18 @@
 [Center for Evolutionary & Organismal Biology](https://evolution.zju.edu.cn/)  
 Advisor: [Prof. Guojie Zhang](http://www.zhanggjlab.org/cn/index.html)
 
+- [Technical Excellence Award](https://bms.zju.edu.cn/2026/1110/c85210a3225216/page.htm), 16th Basic Medical Sciences Poster Day, Zhejiang University (2026)
+
 **B.S. in Life Sciences, September 2021–June 2025**  
 Overall GPA: 3.89/4.00
 
 ## Honors and Scholarships
 
-- [Technical Excellence Award](https://bms.zju.edu.cn/2026/1110/c85210a3225216/page.htm), 16th Basic Medical Sciences Poster Day, Zhejiang University (2026)
 - ZhongKeMeiLing Excellence Scholarship
 - ShangDe Student Scholarship (awarded to 30 students university-wide)
 - Zhejiang University Second- and Third-Class Scholarships
 - Yamato Thermomagnetic Scholarship
 - National Encouragement Scholarship
-
-## Presentations
-
-- **Poster.** Contrasting selective pressures shape human pepsinogen A gene copy-number variation across Eurasia. [16th Basic Medical Sciences Poster Day, Zhejiang University](/presentations/), November 6, 2026.
 
 ## Computational and Analytical Skills
 
