@@ -2,6 +2,13 @@ type = "card"
 title = "Presentations"
 
 [[items]]
+title = "Contrasting selective pressures shape human pepsinogen A gene copy-number variation across Eurasia"
+subtitle = "16th Basic Medical Sciences Poster Day, Zhejiang University"
+date = "November 6, 2026"
+tags = ["Poster", "Technical Excellence Award"]
+image = "/presentations/poster-day-2026.jpg"
+
+[[items]]
 title = "Structural dynamics and dietary adaptation of human pepsin gene clusters"
 subtitle = "IGGSy 2026"
 tags = ["Oral talk"]
